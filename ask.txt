@@ -1,0 +1,1553 @@
+{
+	
+	['hlvl'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о повышении уровня. [ /hlvl ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' За каждый отыгранный час Вам дается 1 EXP.')
+			sampSendChat('/an '..id..' Чтобы его получить - нужно отыграть ровно 60 минут на сервере.')
+			sampSendChat('/an '..id..' Узнать, сколько времени осталось до получения PayDay - [ /time ].')
+			sampSendChat('/an '..id..' Для повышения уровня нужно набрать определенное кол-во EXP. [ /stats ]')
+			sampSendChat('/an '..id..' Как только наберется нужное кол-во EXP, Ваш уровень автоматически повысится.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о повышении уровня.' },
+
+	['hv'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о военном билете. [ /hv ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' [ /voenhelp ]')
+			sampSendChat('/an '..id..' Получить военный билет можно лишь натаскав нужное кол-во ящиков в призыве.')
+			sampSendChat('/an '..id..' Нужная информация о призыве - [ /invites » Призыв ] [ /gps » Организации » Нац. Гвардия ].')
+			sampSendChat('/an '..id..' Военный билет нужен для того, чтобы вступить в любую законную организацию.')
+			sampSendChat('/an '..id..' Также, без него, Вы не сможете купить оружие в Ammu-Nation.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о военном билете.' },
+
+	['dn'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о работе дальнабойщика. [ /dn ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для работы дальнобойщиком Вам необходимо иметь 5.000 умения на автомобиль. [ /skill ]')
+			sampSendChat('/an '..id..' Езжайте в транспорную компанию [ /job ] и арендовывайте автомобиль [ /agetcar ].')
+			sampSendChat('/an '..id..' Смотрите список грузов [ /gryz ]. ИМЕЙТЕ ВВИДУ, что если Вы арендовали самый грузоподъемный ...')
+			sampSendChat('/an '..id..' ... транспорт, он не будет возить маленькие заказы. А большие очень быстро разбирают!')
+			sampSendChat('/an '..id..' Например, если взяли заказ на 33 тонны, его не будет в списке пока не довезут до конца. ')
+			sampSendChat('/an '..id..' После того, как Вы взяли заказ - Вам позвонит деспетчер и на радаре появится маркер.')
+			sampSendChat('/an '..id..' Остаётся только следовать по маркерам. На одном Вы загружаете груз, на втором разгружаете.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о работе дальбаебщика.' },
+
+	['hchs'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о Черном Списке. [ /hchs ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' В Чёрный список организации заносят только лидер и его заместители.')
+			sampSendChat('/an '..id..' Хотите посмотреть, в каком из списков Вы, и на долго-ли? Воспользуйтесь Телефоном [ Y ].')
+			sampSendChat('/an '..id..' Просмотрите все уведомления, там должно быть сообщение о ЧС')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о Черном Списке.' },
+
+	['hzol'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о золоте. [ /hzol ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Золото - это донат валюта на сервере. Его можно получить тремя способами:')
+			sampSendChat('/an '..id..' 1. Задонатить. 2. Получить с промокода. 3. Найти в кладе.')
+			sampSendChat('/an '..id..' Меню управление донатом - [ /donate ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о золоте.' },
+
+	['hitm'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать информацию о Хитманах. [ /hitm ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Хитманы - это скрытая организация, так же, как и секта.')
+			sampSendChat('/an '..id..' Распространять любого рода информацию о них мы не будем.')
+			sampSendChat('/an '..id..' Всю нужную информацию Вы можете найти на Форуме.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать информацию о Хитманах.' },
+
+	['hnasa'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о работе в NASA. [ /hnasa ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Сначало вы можете полететь только на луну. Марс открывается с 3 уровня космонавта.')
+			sampSendChat('/an '..id..' Вам нужно приехать в центр [ /job » NASA ]. На ресепшене вы сможете выбрать куда...')
+			sampSendChat('/an '..id..' ...полетите. Отправление идёт каждые 20 минут. Также и на землю.')	
+			sampSendChat('/an '..id..' После как вы прилетите на планету, в орбитальной станции будет пикап...')
+			sampSendChat('/an '..id..' ...где будет расписано о всех работах на планетах. Эта же информация есть и на ресепшене.')
+			sampSendChat('/com '..id)	
+		end)
+	end, 'Поведать о работе в NASA.' },
+
+	['hjb'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Сказать о том, чтобы подали жалобу на форум. [ /hjb ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не рассматривает жалобы через репорт, если нарушение уже было совершено.')
+			sampSendChat('/an '..id..' Если Вы не согласны с наказанием от админа, или заметили нарушение другого игрока, то ...')
+			sampSendChat('/an '..id..' ... подайте жалобу в соответствующий раздел на нашем форуме.')
+			sampSendChat('/an '..id..' Наш адрес: forum.sampik.online')	
+			sampSendChat('/an '..id..' Жалобы написанные НЕ ПО ФОРМЕ и БЕЗ ДОКАЗАТЕЛЬСТВ рассмотрены не будут.')
+			sampSendChat('/com '..id)				
+		end)
+	end, 'Сказать о том, чтобы подали жалобу на форум.' },
+
+	['crthouse'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о постройке дома. [ /crthouse ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Мaтериалы для стройки находятся на Лесопилке. [ /gps » Прочее » Лесопилка ].')
+			sampSendChat('/an '..id..' Загружаете на погрузчик, выбрав подходящий дом, и везете его куда угодно.')
+			sampSendChat('/an '..id..' Смотрите список свободных домов [ /houses ] и ставите дом [ /createhouse № ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о постройке дома.' },
+
+	['hm'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о веревке и мешке. [ /hm ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы надеть/снять мешок на голову человека используйте - [ /meshok ID ].') 
+			sampSendChat('/an '..id..' Связать человека - [ /tie ID ]. Развязать - [ /untie ID ].') 
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о веревке и мешке.' },
+
+	['hz'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как снять розыск. [ /hz ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для того чтобы избавиться от звёзд розыска достаточно сдаться властям.') 
+			sampSendChat('/an '..id..' Для этого нужно поехать в участок LSPD [ /gps >> Организации >> Фракции >> LSPD ].')	
+			sampSendChat('/an '..id..' Также можно взломать базу данных SWAT, для этого вам нужен ноутбук [ /gps >> Организации >> Фракции >> SWAT ].')
+			sampSendChat('/an '..id..' Вход в серверную находить на парковке SWAT.')
+			sampSendChat('/an '..id..' Каждый PayDay спадает одна звезда розыска.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как снять розыск.' },
+
+	['hadm'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о лидерках и админках. [ /hadm ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Когда имеется нужда, Старшая администрация открывает выборы на ЛИДЕРОВ или ХЕЛПЕРОВ.')
+			sampSendChat('/an '..id..' Об этом оповещается в общий чат и на форуме.')
+			sampSendChat('/an '..id..' Подайте заявку, пройдите обзвон, и у Вас появится шанс занять желаемый пост.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о лидерках и админках.' },
+
+	['hank'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о Хенке. [ /hank ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/re '..id..' ')
+			sampSendChat('/an '..id..' Хенк может перебить Вам замки, дабы угнанный авто стал личным.')
+			sampSendChat('/an '..id..' Используйте: [ /gps » Услуги » Обслуживание транспорта » Автосервис Хенка ].')
+			sampSendChat('/an '..id..' Узнать цену автомобиля можно введя - [ /auto » Документы в бардачке ].')
+			sampSendChat('/an '..id..' Продать угнанный автомобиль - нельзя.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о Хенке.' },
+
+	['premka'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о Premium VIP. [ /premka ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Premium VIP [ 900 GOLD. ]:')
+			sampSendChat('/an '..id..' - Время Действия: Бесконечная или временная')
+			sampSendChat('/an '..id..' - Ускоренное увеличение всех навыков. [ /skill ]')
+			sampSendChat('/an '..id..' - +1 Exp каждые 5 часов.')
+			sampSendChat('/an '..id..' - Самостоятельно увольнение из любой организации. [ /leave ]')
+			sampSendChat('/an '..id..' - Выделение рекламы [ /ad ] + Время Действия: 2 Часа.')
+			sampSendChat('/an '..id..' - Возможность вызывать к себе личный транспорт бесконечное количество раз.')
+			sampSendChat('/an '..id..' - Возможность закрывать личные сообщения. [ /togwh ]')
+			sampSendChat('/an '..id..' Информация о всех VIP - /vip')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о Premium VIP.' },
+
+	['hlink'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о группах ВК и форуме. [ /hlink ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Сайт и форум проекта: sampik.online')
+			sampSendChat('/an '..id..' Официальная группа в ВК: vk.соm/sampik.online')
+			sampSendChat('/an '..id..' Подслушано проекта: vk.соm/sampikpodslushano')
+			sampSendChat('/an '..id..' Ссылки выше можно скопировать из документа chatlog.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о группах ВК и форуме.' },
+
+	['otm'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать об отмычках. [ /otm ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы взломать авто Вам нужно купить отмычки в супермаркете [ /gps » Услуги ].')
+			sampSendChat('/an '..id..' Попробуйте сесть в автомобиль организации, банды, мафии ...')
+			sampSendChat('/an '..id..' ... и сами поймёте всю систему взлома. Личные авто взломать нельзя.')
+			sampSendChat('/an '..id..' Если Вы ошибетесь - Вы будете объявлены в розыск!')
+			sampSendChat('/an '..id..' Продать угнанный автомобиль - нельзя.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать об отмычках.' },
+
+	['pri'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Закрыть вопрос с пожеланием. [ /pri ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Приятной игры! <3')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Закрыть вопрос с пожеланием.' },
+
+	['hut'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как продать авто. [ /hut ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Не знаете, куда деть свой автомобиль?')
+			sampSendChat('/an '..id..' [ /car » Информация о продаже ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как продать авто.' },
+
+	['hkani'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о канистре. [ /hkani ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Воспользуйтесь канистрой, чтобы заправить свой транспорт.')
+			sampSendChat('/an '..id..' На заправке: достаёте её [ N (Инвентарь) ] и нажмите по канистре 2 раза.')
+			sampSendChat('/an '..id..' Учтите, что вам нужно быть в авто.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о канистре.' },
+
+	['hg'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как передать оружие. [ /hg ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы передать патроны, зайдите в инвентарь, около скина будут ваши оружия.')
+			sampSendChat('/an '..id..' Нажтиме на нужное оружие 2 раза, и введите кол-во нужных патрон')
+			sampSendChat('/an '..id..' Они окажутся в инвентаре, после, нажмите на них 1 раз и снизу нажмите на...')
+            sampSendChat('/an '..id..' ...иконку двух человечков, в появившемся окне введите id человека...')
+            sampSendChat('/an '..id..' ...которому хотите передать патроны.')
+            sampSendChat('/an '..id..' Чтобы передать оружие, необходимо сделать тоже самое, но при этом нужно...')
+            sampSendChat('/an '..id..' ...выбрать оружие, которое хотите передать, а не патроны.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как передать оружие.' },
+
+	['hin'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о вступлении. [ /hin ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для вступления во фракцию необходимо иметь 2 уровень [ 8 часов в игре ].')
+			sampSendChat('/an '..id..' После этого Вам открывается техническая возможность вступления.')
+			sampSendChat('/an '..id..' Однако, у каждой фракции есть индивидуальные критерии на уровень и навыки.')
+			sampSendChat('/an '..id..' Свяжитесь с лидером, чтобы вступить во фракцию.')
+			sampSendChat('/an '..id..' Открытые/Закрытые наборы - [ /invites ]. Лидеры онлайн - [ /leaders ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о вступлении.' },
+
+	['hc'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о магазине одежды. [ /hc ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Купить аксессуары и одежду (скин) можно в Магазине одежды.')
+			sampSendChat('/an '..id..' [ /gps » Услуги » Магазины одежды ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о магазине одежды.' },
+
+	['had'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о знаке в углу. [ /had ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Восклицательный знак возле времени означает, что у вас в телефоне новое уведомление.')
+			sampSendChat('/an '..id..' Прочитайте его в телефоне [ Y ] --> Уведомления.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о письме в углу.' },
+
+	['hui'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать об увольнении. [ /hui ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы уволиться из фракции - обратитесь к своему лидеру.')
+			sampSendChat('/an '..id..' Администрация не может увольнять игроков из фракции.')
+			sampSendChat('/an '..id..' Вы можете уволиться самостоятельно, если у Вас есть Premium VIP. [ /leave ]')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать об увольнении.' },
+
+	['hcar'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о покупке авто. [ /hcar ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' [ /help ] » Как купить машину?')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о покупке авто.' },
+
+	['pls'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, что не стоит просить в репорт. [ /pls ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не выдаёт: EXP, уровень, деньги, золото, подарочное время.')
+			sampSendChat('/an '..id..' А также: ничего и никого не телепортирует, не следит за нелегальными сделками.')
+			sampSendChat('/an '..id..' Исключение: проведение сделок по обмену.')
+			sampSendChat('/an '..id..' Еще, мы не выдаем: скины, скиллы, оружие, хп, автомобили и прочие игровые ресурсы.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, что не стоит просить.' },
+
+	['sad'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как подать объявление. [ /sad ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для подачи объявления Вам необходимо добраться до офиса CNN. Воспользуйтесь навигатором.')
+			sampSendChat('/an '..id..' [ /gps » Организации » Фракции » CNN ]. Добравшись туда - войдите в здание.')
+			sampSendChat('/an '..id..' Перед Вами будет комната с 3D пикапом, подойдите к нему и используйте [ /ad ].')
+			sampSendChat('/an '..id..' Далее, выбирайте свободный слот и подавайте Ваше объявление. Его цена составит $1500.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как подать объявление.' },
+
+	['fu'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Сказать о том, что ты не можешь помочь. [ /fu ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не сможет Вам в этом помочь. Попробуйте решить эту проблему самостоятельно.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Сказать о том, что ты не можешь помочь.' },
+
+	['slet'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Когда слетают дома. [ /slet ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Имущество неактивных игроков освобождается ежедневно в 19:30.')
+			sampSendChat('/an '..id..' Посмотреть номера свободных построек - [ /houses ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Когда слетают дома.' },
+
+	['obr'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Неактуальное обращение. [ /obr ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Обрабатывая Ваше обращение, мы поняли, что оно уже неактуально.')
+			sampSendChat('/an '..id..' Если это не так, или Вам нужна еще какая-либо помощь - дайте знать.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Неактуальное обращение.' },
+
+	['bcar'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Где моя купленная тачка? [ /bcar ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' После покупки авто вам нужно ждать 24 часа реального времени, прежде чем, ваш автомобиль будет доставлен.')
+			sampSendChat('/an '..id..' Узнать, появился-ли автомобиль на аккаунте - [ /stats ].')
+			sampSendChat('/an '..id..' Если вы не хотите ждать 24 часа,вы можете доплатить 50.000$ в автосалоне и вам сразу его доставят.')
+			sampSendChat('/an '..id..' Изначально автомобиль нужно будет забрать на ресепшне [ /gps >> Транспорт >> Автосалон ].')
+			sampSendChat('/an '..id..' Не забудьте перепарковать ваш новый автомобиль в любое удобное для вас место [ /car >> ТС >> Припарковать транспорт ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Где моя купленная тачка?' },
+
+	['rpr'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Отправить игрока в тему Восстановления. [ /rpr ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Обратитесь в тему восстановления на нашем форуме.')
+			sampSendChat('/an '..id..' forum.sampik.online » Технический раздел » Восстановление игровых ресурсов ')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Отправить игрока в тему Восстановления.' },
+
+	['hpark'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Как припарковать машину. [ /hpark ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы припарковать свою машину туда, куда Вам нужно, необходимо...')
+			sampSendChat('/an '..id..' ...cесть в нее и использовать комбинацию [ /car » Парковка ].')
+			sampSendChat('/an '..id..' После этих манипуляций Ваш автомобиль будет появляться там, где Вы его припарковали.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Как припарковать машину.' },
+
+	['wq'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Некорректный вопрос. [ /wq ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Ваш вопрос некорректен, попробуйте задать его иначе.')
+			sampSendChat('/an '..id..' Пожалуйста, прежде чем подавать обращение - внятно его сформулируйте.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Некорректный вопрос.' },
+
+	['hcp'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Как узнать цены на авто. [ /hcp ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Все цены транспорта представлены в автосалоне.')
+			sampSendChat('/an '..id..' Достаточно приехать туда и войти в меню автосалона, чтобы узнать цену на автомобиль.')
+			sampSendChat('/an '..id..' Используйте [ /gps » Услуги » Автосалон ].')
+			sampSendChat('/an '..id..' Еще, цену можно узнать, сев в автомобиль и использовав - ...')
+			sampSendChat('/an '..id..' ... [ /auto » Документы в бордачке ], при условии, что есть такая возможность.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Как узнать цены на авто.' },
+
+	['ty'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Подлизать. [ /ty ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Спасибо за обращение, мы примем это к сведению.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Подлизать.' },
+
+	['ok'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, что обращение было рассмотренно. [ /ok ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Ваше обращение было обработано.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, что обращение было рассмотренно.' },
+
+	['hl'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Некорректное обращение. [ /hl ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+
+			sampSendChat('/an '..id..' Ваше обращение некорректно.')
+			sampSendChat('/an '..id..' Пожалуйста, прежде чем подавать обращение - внятно его сформулируйте.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Некорректное обращение.' },
+
+	['hunt'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать об охоте. [ /hunt ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Отправиться на охоту. [ /job » Охота ]')
+			sampSendChat('/an '..id..' Там Вы сможете купить оружие и спросить местонахождение животных у лесника.')
+			sampSendChat('/an '..id..' Также, Вы можете арендовать ТС.')	
+			sampSendChat('/an '..id..' После чего вы можете поехать на поиски оленей.')	
+			sampSendChat('/an '..id..' После того как Вы убили животное, его нужно подобрать. Клавиша [ Y ]. ')	
+			sampSendChat('/an '..id..' Мясо можно продать или съесть, приготовив его на костре.')
+			sampSendChat('/com '..id)	
+		end)
+	end, 'Поведать об охоте.' },
+
+	['hs'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о системе скиллов. [ /hs ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Силу вы можете прокачать в спортзале [ /gps >> Услуги >> Спортзал ].')
+			sampSendChat('/an '..id..' Если нужно прокачать навык сексуальности, подойдите к девушке(боту)...')
+			sampSendChat('/an '..id..' ...которая находиться рядом с отелем.')
+			sampSendChat('/an '..id..' Навык моряка вы можете прокачать  [ /job >> Рыболов/Ловец Акул и Собиратель].')
+			sampSendChat('/an '..id..' Права и языки вы можете изучить в Образовательном Центре [ /gps >> Услуги >> Образование >> Образовательный Центр ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о системе скиллов.' },
+
+	['hlang'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о языках. [ /hlang ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Языки нужны для того, чтобы понимать других игроков и разговаривать на этих языках.')
+			sampSendChat('/an '..id..' Говорить на другом языке Вы сможете только тогда, когда изучите его на все 100 процентов.')
+			sampSendChat('/an '..id..' Если Вы переключите язык на другой, то те, у кого этот язык не изучен ...')
+			sampSendChat('/an '..id..' ... не будут понимать то, что Вы говорите. [ /language ]')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о языках.' },
+
+	['hbenz'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о перевозке бензина. [ /hbenz ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для начала Вам нужно взять тягач с бензовозом на базе дальнобойщиков.')
+			sampSendChat('/an '..id..' [ /gps » Прочее » База Дальнобойщиков], После чего поехать ...')
+			sampSendChat('/an '..id..' ... на нефтеперерабатывающий завод [ /gps » Прочее ].')
+			sampSendChat('/an '..id..' После загрузки тягача езжайте и сливайте бензин в колонку фракции.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о перевозке бензина.' },
+
+	['pr'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о получении прав. [ /pr ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы ездить на автомобиле и других т/с, Вам нужно получить права.')
+			sampSendChat('/an '..id..' Их цена $15.000 (за другие выше). Отправлятесь в Образовательный центр - [ /gps » Услуги » Образование ]')
+			sampSendChat('/an '..id..' Пройдите теоретический экзамен на 2 этаже, и начнётся езда по городу.')
+			sampSendChat('/an '..id..' После завершения вы получите свои права.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о получении вод. прав.' },
+
+	['hctaxi'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о такси. [ /hctaxi ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Купите шашку таксиста в супермаркете и начинайте работать.')
+			sampSendChat('/an '..id..' Установить шашку возможно только на личный транспорт.')
+			sampSendChat('/an '..id..' Зато абсолютно на любой, будь то автомобиль, мотоцикл или даже вертолёт.')
+			sampSendChat('/an '..id..' Тариф за километр устанавливает таксист от $100 до $500. Просто используйте [ /gotaxi ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о такси.' },
+
+	['pobeg'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о побеге. [ /pobeg ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы сбежать из тюрьмы, Вам необходимо найти заточку ...')
+			sampSendChat('/an '..id..' ... возле кроватей пишите [ /blade ]. На все 20 кроватей есть одна заточка.')
+			sampSendChat('/an '..id..' После того, как кто-то её найдёт, она автоматически перереспавнивается.')
+			sampSendChat('/an '..id..' Если Вы нашли заточку - Вам нужно убить НАДЗИРАТЕЛЯ (в интерьере, не на улице).')
+			sampSendChat('/an '..id..' А потом сбегать через забор. В каком именно месте - ищите сами.')
+			sampSendChat('/an '..id..' Если Вы умрёте или перезайдёте - Вас вернёт обратно в тюрьму.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о побеге.' },
+
+	['hgive'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как передавать что-то через инвентарь. [ /hgive ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы передать предмет из инвентаря, нужно открыть инвентарь на клавишу [ N ].')
+			sampSendChat('/an '..id..' Затем, выделив нужный предмет, кликнуть иконку двух человечков в левом, нижнем, углу.')
+			sampSendChat('/an '..id..' В появившемся окне укажите ID того, кому передаете, затем количество передаваемого предмета.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как передавать что-то через инвентарь.' },
+
+	['tlf'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о телефоне [ /tlf ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы достать телефон, используйте - [ /ph ]. ')
+			sampSendChat('/an '..id..' Справа, в углу, появится Ваш смартфон, с которым можно взаимодействовать мышкой.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о телефоне' },
+
+	['hbox'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как возить боеприпасы и где их брать. [ /hbox ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Ящики с боеприпасами нужны для того чтобы пополнить склад фракции.')
+			sampSendChat('/an '..id..' Бандам и Мафиям нужно грабить NGSA [ /gps >> Организации >> Фракции >> NGSA Area 51,либо NGSA SF ]. ')
+			sampSendChat('/an '..id..' Ограбление происходит так что вы попадете на базу NGSA через секретный вход, либо залетаете на базу на своём авто.')
+			sampSendChat('/an '..id..' На NGSA Area 51 есть секретный вход через который вы попадает на склад.')
+			sampSendChat('/an '..id..' Учтите что призвать машину на базе NGSA невозможно.')
+			sampSendChat('/an '..id..' Чтобы взять ящик вам нужно подойти к нему и нажать на [ H ], затем положить в багажник.')
+			sampSendChat('/an '..id..' Чтобы положить ящик с боеприпасами в багажник вам нужно встать у багажника авто... ')
+			sampSendChat('/an '..id..' ...и нажать комбинацию клавиш ALT + ПКМ. ')
+			sampSendChat('/an '..id..' В случае если вы уронили ящик [ N >> Рядом ]')
+			sampSendChat('/com '..id)	
+		end)
+	end, 'Поведать о том, как возить боеприпасы и где их брать.' },
+
+	['hcl'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как закрыть ТС. [ /hcl ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Закрыть/открыть командой можно лишь арендованый транспорт. Личный - только через меню.')
+			sampSendChat('/an '..id..' Чтобы закрыть/открыть личный транспорт, достаточно прописать [ /car » Управление замком ].')
+			sampSendChat('/an '..id..' Арендованый же транспорт закрывается/открывается одной командой - [ /lock ].')
+			sampSendChat('/an '..id..' Закрыть транспорт своей организации невозможно.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как закрыть ТС.' },
+
+	['hdrug'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о продаже наркотиков. [ /hdrug ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Продать незаконные предметы вы можете через сделку. ')  
+			sampSendChat('/an '..id..' [ N >> Нажать на предмет который вы хотите продать, затем нажать на $ внизу инвентаря ].') 
+			sampSendChat('/an '..id..' Также вы можете продать нелегальные предметы [ /gps >> Услуги >> Чёрный рынок ].') 
+			sampSendChat('/an '..id..' Ещё вы может продать нелегальные вещи через /shop в любой точке штата.') 
+			sampSendChat('/an '..id..' Но учтите что вам могут дать звёзды розыска и посадить в тюрьму.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о продаже наркотиков.' },
+
+	['carh'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, что авто можно иметь без дома. [ /carh ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Транспорт можно приобрести не имея жилья.')
+			sampSendChat('/an '..id..' Отсутствие дома или постройки никак на это не влияет.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, что авто можно иметь без дома.' },
+
+	['hst'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как сменить стиль боя. [ /hst ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Возможность изменять стиль боя открываетcя при навыке силы 200+. [ /skill ]')
+			sampSendChat('/an '..id..' Чтобы изменить стиль боя, воспользуйтесь командой [ /styles ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как сменить стиль боя.' },
+
+	['hn'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Нет. [ /hn ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Нет.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Нет.' },
+
+	['hy'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Да. [ /hy ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Да.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Да.' },
+
+	['hcall'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как позвонить с телефона. [ /hcall ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Сначала возьмите в руки телефон [ /ph ], затем в меню выберите пункт ТЕЛЕФОН.')
+			sampSendChat('/an '..id..' После этого набирайте нужный Вам номер. Узнать номер игрока - [ /number id ].')
+			sampSendChat('/an '..id..' Как только наберете номер - нажмите ОК, вы будете звонить другому игроку.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как позвонить с телефона.' },
+
+	['wa'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Сказать то, что обращение уже обрабатывается. [ /wa ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Мы принялись за обработку Вашего обращения, ожидайте.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Сказать то, что обращение уже обрабатывается.' },
+
+	['hradio'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Как связаться с DJ. [ /hradio ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для связи с Диджеями используйте - [ /radio » Связаться с DJ ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Как связаться с DJ.' },
+
+	['hrp'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Узнайте РП путем. [ /hrp ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На подобные вопросы администрация не может дать ответ. Попробуйте узнать это ролевым путем.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Узнайте РП путем.' },
+
+	['hund'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как надеть скин. [ /hund ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для того чтобы надеть свою одежду, зайдите в инвентарь [N].')
+			sampSendChat('/an '..id..' Найдите свою одежду в инвентаре, нажмите на неё 2 раза.')
+			sampSendChat('/an '..id..' Вуаля! Вы одеты.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как надеть скин.' },
+
+	['hgun'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как и где взять оружие. [ /hgun ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Взять или приобрести оружие Вы можете на складе своей оранизации или в магазине оружия.')
+			sampSendChat('/an '..id..' Достаточно пойти на склад, зайти в инвентарь и в правом меню выбрать...')
+			sampSendChat('/an '..id..' ...пункт сверху "СКЛАД", берите нужное кол-во патрон и оружия.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как и где взять оружие.' },
+
+	['hlid'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Сказать: спросите у лидера. [ /hlid ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не может дать ответ на этот вопрос.')
+			sampSendChat('/an '..id..' Обратитесь с этим вопросом к лидеру фракции, дабы получить ответ.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Сказать: спросите у лидера.' },
+
+	['tune'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о тюнинге. [ /tune ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Установить тюнинг на свой автомобиль Вы можете в Автосервисе. Также, там делают как ...')
+			sampSendChat('/an '..id..' ... покрасочные работы, так и ремонт автомобиля. Используйте GPS, дабы найти ближайший сервис.')
+			sampSendChat('/an '..id..' [ /gps » Услуги » Обслуживание транспорта » Автосервис LS | SF | LV ]')
+			sampSendChat('/an '..id..' Чтобы активировать SPORT-режим нажмите - [ Пробел + 2 ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о тюнинге.' },
+
+	['hrep'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как починить машину. [ /hrep ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Есть несколько способов починить свой транспорт:')
+			sampSendChat('/an '..id..' Первый - заехать в любую починку сети Pay&Spray. Ремонт будет бесплатным.')
+			sampSendChat('/an '..id..' Второй - воспользоваться услугами Автосервиса.')
+			sampSendChat('/an '..id..' [ /gps » Услуги » Обслуживание транспорта » Автосервис LS | SF | LV ]')
+			sampSendChat('/an '..id..' Третий - подойти к капоту автомобиля и использовать - [ /bonnet ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как починить машину.' },
+
+	['hwarn'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о предупреждениях. [ /hwarn ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Warn (предупреждение) наказание, которое ничего вам не ограничивает.')
+			sampSendChat('/an '..id..' Warn можно [ /donate >> Услуги Аккаунта >> Снять Warn ].')
+			sampSendChat('/an '..id..' При получении 5 Warn аккаунт блокируется на 7 дней.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о предупреждениях.' },
+
+	['promo'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о Промокодах. [ /hpromo ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Что такое промокод?')
+			sampSendChat('/an '..id..' Промокод - это спец. код, который даёт Вам деньги, уровень и т.п.')
+			sampSendChat('/an '..id..' О новых промокодах можно узнать в официальной группе сервера - [ vk.com/sampik.online ].')
+			sampSendChat('/an '..id..' Чтобы ввести Промокод используйте - [ /mm » ПромоКод ].')
+			sampSendChat('/an '..id..' На данный момент действующих промокодов нет.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о Промокодах.' },
+
+	['hmol'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как сделать коктейль Молотова. [ /hmol ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Вам требуется 4 уровень скилла инженера.')
+			sampSendChat('/an '..id..' Для создания коктейля Молотова вам понадобятся: пустая бутылка и...')
+			sampSendChat('/an '..id..' ...полная канистра с топливом. Бутылку можно найти в любой мусорке.')
+			sampSendChat('/an '..id..' Канистру можно наполнить на любой заправке. [ /fillkani ]')
+			sampSendChat('/an '..id..' Чтобы сделать Молотов - дважды кликните на пустую бутылку в Вашем инвентаре.')
+			sampSendChat('/an '..id..' Не забывайте о правилах сервера, за DM полагается наказание!')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как сделать коктейль Молотова.' },
+
+	['hjob'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать гайд по работам (в т.ч. и прибыльной). [ /hjob ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Посмотреть список работ - [ /job ].')
+			sampSendChat('/an '..id..' Все работы доступны с первого уровня. Однако, для Moon One Вам понадобится 3-й.')
+			sampSendChat('/an '..id..' На большинстве перечисленных работ платят почти одинаково.')
+			sampSendChat('/an '..id..' Не можете определиться с выбором? Советуем Вам попробовать работу рыбака или дальнобойщика.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать гайд по работам (в т.ч. и прибыльной).' },
+
+	['hiznas'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о командах для секса. [ /hiznas ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для особых шалунишек у нас припасены некоторые функции.')
+			sampSendChat('/an '..id..' [ /sex ] - Есть разные виды данного действия.')
+			sampSendChat('/an '..id..' Объяснять, какая команда и для чего нужна - не будем.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о командах для секса.' },
+
+	['carkey'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как передать ключи от авто. [ /carkey ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Передать ключи от личного транспорта можно следующим образом:')
+			sampSendChat('/an '..id..' [ /car » Выбирайте слот нужного авто » Дать ��лючи ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как передать ключи от авто.' },
+
+	['jobp'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, что такое очки работы ЖОБ [ /jobp ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' JOB - это очки работы. Именно исходя из их количества строится Ваша зарплата.')
+			sampSendChat('/an '..id..' Количество очков JOB умножается на сумму, выдающуюся за 1 поинт JOB.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, что такое очки работы ЖОБ' },
+
+	['htime'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, что такое подарочное время. [ /htime ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Подарочное время нужно для того, чтобы сокращать срок заключения.')
+			sampSendChat('/an '..id..' Используйте [ /mm » Подарочное время ]. ')
+			sampSendChat('/an '..id..' Подарочное время можно передавать. [ /paytime ]')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, что такое подарочное время.' },
+
+	['weed'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как посадить Марихуану. [ /weed ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Купите семена в магазине 24/7, идите в ферму и зайдите в свою теплицу.')
+			sampSendChat('/an '..id..' Подготовьте одну из лунок, посадите тула семена. Поливайте растение.')
+			sampSendChat('/an '..id..' Удобрение снижает рост на 10 минут. Требуется подождать час.')
+			sampSendChat('/an '..id..' Можете забирать готовый куст и использовать его в инвентаре.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как посадить Марихуану.' },
+
+	['punish'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о выдаваемых Администрацией наказаниях. [ /punish ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40) 
+			sampSendChat('/an '..id..' Как наказываются игроки за те, или иные, нарушения:') 
+			sampSendChat('/an '..id..' Наказание за затрагивание родни и ТК (убийство члена своей команды) выдается строго ...') 
+			sampSendChat('/an '..id..' ... после обращения игрока (пострадавшей стороны) в репорт. ') 
+			sampSendChat('/an '..id..' Такие наказания, как: DM, DB, SK, nRP и пр. могут выдаваться и без обращения игрока ...')
+			sampSendChat('/an '..id..' ... на усмотрение администратора.') 
+			sampSendChat('/an '..id..' Такое нарушение, как мат и оскорбление в Вашу сторону наказываются без обращения игрока.')
+			sampSendChat('/an '..id..' Мы не можем забанить игрока за DM или наказать за то, что он неадекватно себя ведет.')
+			sampSendChat('/an '..id..' Любое нарушение игрока должно быть доказано. Без доказательств наказание выдать нельзя.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о выдаваемых Администрацией наказаниях.' },
+
+	['hnal'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о налогах и штрафах. [ /hnal ID ]', 0xc1c1c1)end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Вся информация о налогах и штрафах доступна в [ /notebook >> Налоги ].')
+			sampSendChat('/an '..id..' Оплатить налоги и штрафы можно также через ноутбук.')
+			sampSendChat('/an '..id..' В случае неуплаты налогов, Ваше имущество подвергается аресту.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о налогах и штрафах.' },
+
+	['hfish'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать гайд о рыбалке. [ /hfish ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы начать работу рыбака достаточно прибыть в Рыбацкую бухту. [ /job ]')
+			sampSendChat('/an '..id..' Там Вы сможете купить удочку [ /ydo ], накопать червей или купить их в магазине «ЯЯЯЗЬ».')	
+			sampSendChat('/an '..id..' Рыбачить можно как с пирса, так и на воде, арендовав плавательное средство.')
+			sampSendChat('/an '..id..' Чтобы закинуть удочку воспользуйтесь командой - [ /fish ].')
+			sampSendChat('/an '..id..' Продать рыбу можно в будке, которая находится на пирсе в Рыбацкой бухте.')
+			sampSendChat('/com '..id)	
+		end)
+	end, 'Поведать гайд о рыбалке.' },
+
+	['hshark'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать гайд о ловле акул. [ /hshark ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы начать работу ловца акул достаточно прибыть в Рыбацкую бухту. [ /job ]')
+			sampSendChat('/an '..id..' По приезду, зайдите в магазин "ЯЯЯЗЬ" и купите там нужные для рыбалки вещи.')
+			sampSendChat('/an '..id..' На пирсе арендуйте Reefer [ /agetcar ] и направляйтесь на метку, которая появится на карте.')
+			sampSendChat('/an '..id..' Чтобы управлять таким катером понадобится навык «Вождение катеров» равный сотне. [ /skill ]')
+			sampSendChat('/an '..id..' Прибыв на место используйте - [ /shark ] и ловите акулу.')
+			sampSendChat('/an '..id..' Поймав акулу - возвращайтесь в бухту, она отмечена на карте.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать гайд о ловле акул.' },
+
+	['harh'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать гайд по работе археолога. [ /harh ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы начать работу Археолога, необходимо прибыть на раскопки. [ /job » Археология ]')
+			sampSendChat('/an '..id..' Там Вы можете найти редкие аксессуары и ресурсы, за которые сможете получить денег.')
+			sampSendChat('/an '..id..' Первым делом вам нужно купить монтировку, она продаётся в будке.')
+			sampSendChat('/an '..id..' Вы можете выбрать 2 пути, открывать гробницы или проходить лабиринты.')
+			sampSendChat('/an '..id..' Гробница - здание в виде фараона, лабиринт - здание в виде пирамиды.')
+			sampSendChat('/an '..id..' Открывать двери и гробы с [ ПКМ ]. Также зайдя в одну дверь можно пройти туннель...')
+			sampSendChat('/an '..id..' и забрать карту сокровищ, с помощью которой вы будете находит по штату сокровища')
+			sampSendChat('/an '..id..' И раскапывать их лопатой, всё мсобранное можно продать в будке.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать гайд по работе археолога.' },
+
+	['arp'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать то, что админы не вмешиваются в РП. [ /arp ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не вмешивается в процесс ролевой игры.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать то, что админы не вмешиваются в РП.' },
+
+	['hlaw'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как вызвать адвоката. [ /hlaw ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы нанять адвоката - Вам нужно связаться с ним.')
+			sampSendChat('/an '..id..' Используйте [ /lawyers ] либо [ /online » Адвокаты ], чтобы посмотреть список адвокатов.')
+			sampSendChat('/an '..id..' Получив номер адвоката - свяжитесь с ним по телефону.')
+			sampSendChat('/an '..id..' Достаньте телефон - [ /ph ] » CALL » Введите номер » Нажмите CALL в нижнем углу.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как вызвать адвоката.' },
+
+	['htax'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как вызвать такси. [ /htax ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для вызова такси Вам необходимо сделать следующее:')
+			sampSendChat('/an '..id..' Достать телефон [ /ph ] [ Y ] >> Телефон >> Вызвать такси')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как вызвать такси.' },
+
+	['hanim'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о анимках на сервере. [ /hanim ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не знает всех анимаций, представленных на сервере.')
+			sampSendChat('/an '..id..' Используйте [ /anim ].')
+			sampSendChat('/an '..id..' Все анимации представлены там, найдите нужную самостоятельно.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о анимках на сервере.' },
+
+	['golod'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о голоде. [ /golod ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Ваше HP уменьшается потому, что Вы голодны. [ /potreb ]')
+			sampSendChat('/an '..id..' Найдите ближайшую закусочную и перекусите.')
+			sampSendChat('/an '..id..' [ /gps » Услуги » Закусочные ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о голоде.' },
+
+	['hquest'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о квестах. [ /hquest ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' К сожалению, системы квестов пока нет на нашем сервере.')
+			sampSendChat('/an '..id..' Мы не знаем, когда она появится, вся информация есть в сообществе ВКонтакте.')
+			sampSendChat('/an '..id..' Раньше система квестов присутствовала.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о квестах.' },
+
+	['hcolor'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как найти цвета для ника. [ /hcolor ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не знает всех цветов для ников и покраски транспорта.')
+			sampSendChat('/an '..id..' Вы самостоятельно можете найти нужный Вам цвет для ТС в интернете.')
+			sampSendChat('/an '..id..' Используйте - [ /cvet | /colors ] для поиска цветов для ника.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как найти цвета для ника.' },
+
+	['hnrpnick'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как сменить нонРП ник. [ /hnrpnick ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Сменить нонРП ник Вы можете самостоятельно, при условии что Ваш LVL не выше 2.')
+			sampSendChat('/an '..id..' Используйте [ /donate » Услуги аккаунта » Сменить Ник-Нейм ].')
+			sampSendChat('/an '..id..' Эта услуга для Вас будет бесплатной.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как сменить нонРП ник.' },
+
+	['chips'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, что такое GOLD-фишки. [ /chips ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Gold-Фишки можно купить только за золото [ /donate ].')
+			sampSendChat('/an '..id..' 1 Грамм Золота = 4000 Gold-Фишек. Их нельзя обменять на деньги или обычные фишки.')
+			sampSendChat('/an '..id..' Gold-Фишки возможно использовать только как ставку.')
+			sampSendChat('/an '..id..' Введите [ /gold ], чтобы использовать Gold-Фишки в качестве ставки.')
+			sampSendChat('/an '..id..' Если вы поставите Gold-Фишки в качестве ставки - выигрыш будет в обычных фишках.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, что такое GOLD-фишки.' },
+
+	['hboot'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как взаимодействовать с багажником. [ /hboot ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			sampSendChat('/an '..id..' Для взаимодействия с багажником автомобиля используйте инвентарь [ N >> Багажник ].')
+			sampSendChat('/an '..id..' В багажник можно класть как оружие, наркотики, ящики с боеприпасами, так и людей.')
+			sampSendChat('/an '..id..' Учтите, если машина взорвется - Вы потеряете содержимое ее багажника.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как взаимодействовать с багажником.' },
+
+	['hkid'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как похищать людей. [ /hkid ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' ВНИМАНИЕ! Перед данным действием, отыграйте РП.')
+			sampSendChat('/an '..id..' Похищение людей следует группировкой численностью от 3-х человек.')
+			sampSendChat('/an '..id..' Игнорируя это правило Вы можете быть наказаны за nRP.')
+			sampSendChat('/an '..id..' Чтобы вырубить игрока, используйте биту, которую нужно купить в супермаркете.')
+			sampSendChat('/an '..id..' Засунуть в багажник - [ N >> Багажник >> Затем снизу будет стрелочка которую нужно нажать и выбрать (Человек) ]')
+			sampSendChat('/an '..id..' Условие: человек должен быть рядом с багажником авто.')
+			sampSendChat('/an '..id..' Связать игрока - [ /tie ] ,надеть мешок [ /meshok либо /bag id ]')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как похищать людей.' },
+
+	['hdays'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о 7Days. [ /hdays ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' 7Day - это система бонусов для настоящик задротов!')
+			sampSendChat('/an '..id..' Условия просты: ежедневно получайте 5 зарплат подряд, на протяжении 7 дней, и тогда:')
+			sampSendChat('/an '..id..' На 8-й день Вы получите - $100.000. На 9-й - 500 сек. подарочного времени.')
+			sampSendChat('/an '..id..' На 10-й день Вам подарят 50 грамм золота!. После 10-го дня счетчик сбрасывается ...')
+			sampSendChat('/an '..id..' ... и Вы сможете начать с самого начала.')
+			sampSendChat('/an '..id..' Зарплаты, полученные во время РП сна - не засчитываются.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о 7Days.' },
+
+	['hfindcar'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, где потерялась тачка игрока. [ /hfindcar ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Потеряли свой автомобиль? Убедитесь, что он у Вас вообще есть - [ /stats ].')
+			sampSendChat('/an '..id..' Авто существует? Попробуйте найти его на карте - [ /car » Найти транспорт на карте ].')
+			sampSendChat('/an '..id..' Авто есть в статистике, но его нет на карте? Гляньте на парковке/в гараже [ /loadcar ].')
+			sampSendChat('/an '..id..' Если Вы заказывали авто в автосалоне - необходимо подождать 24 часа реального времени.')
+			sampSendChat('/an '..id..' Не помогло? Если в статистике ID авто (квадратные скобки) свыше 2000, то...')
+			sampSendChat('/an '..id..' ...обратитесь в тему восстановления на нашем форуме.')
+			sampSendChat('/an '..id..' Sampik RP » Технический раздел » Восстановление игровых ресурсов [ 1 сервер ]')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, где потерялась тачка игрока.' },
+
+	['philin'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Направить к Филину. [ /philin ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для решения проблемы обратитесь к ГА сервера - Cardinale Reveal [ vk.com/philinos ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Направить к Филину.' },
+
+	['plates'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как получить номера на транспорт. [ /plates ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы получить уникальные номера на свой транспорт, вам следует...')
+			sampSendChat('/an '..id..' ...приехать в полицейский департамент, некоторые сотруднки могут...')
+			sampSendChat('/an '..id..' ...сделать вам номера. Стоимость номеров можете узнать у сотрудника.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, как получить номера на транспорт.' },
+
+	['hgryz'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о системе грузов Дальнобойщиков. [ /hgryz ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Администрация не может как-либо повлиять на грузы дальнобойщиков.')
+			sampSendChat('/an '..id..' Они обновляются автоматически, с переодичностью в 10 минут...')
+			sampSendChat('/an '..id..' ...а точнее - в 10, 20, 30, 40 и 50 минут каждого часа.')
+            sampSendChat('/an '..id..' Грузы не обновляются вначале часа, а конкретно в 00 минут.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о системе грузов Дальнобойщиков.' },
+
+	['hmarry'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о бракосочетании. [ /hmarry ID ]', 0xc1c1c1)end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для бракосочетания Вам понадобятся обручальные кольца и свадебный торт. [ /gps » Услуги » Супермаркеты ]')
+			sampSendChat('/an '..id..' Приобретя их - направляйтесь в церковь. [ /gps » Прочее » Церковь ].')
+			sampSendChat('/an '..id..' К тому же, Вам понадобятся свидетели. Пригласите друзей, либо выберите друг друга.')
+			sampSendChat('/an '..id..' [ /propose - сделать предложение | /witness - выбрать свидетеля | /divorce - развестись ]')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о бракосочетании.' },
+
+	['hvoice'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о VoiceChat. [ /hvoice ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' VoiceChat - модификация, позволяющая использовать функцию голосового чата в игре.')
+			sampSendChat('/an '..id..' sampik.online - оттуда Вы сможете загрузить необходимые файлы для его работы.')
+			sampSendChat('/an '..id..' Используйте клавишу [ B ] для активации голосового чата.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о VoiceChat.' },
+
+	['uncomz'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, как уволиться с призывников. [ /uncomz ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Уволить с призыва Вас может исключительно лидер Армии, либо руководитель призыва.')
+			sampSendChat('/an '..id..' Узнать, есть-ли кто из них в сети - [ /comziv » Призывники Онлайн ]. Ищите оранжевый ник.')
+			sampSendChat('/an '..id..' Далее, обратитесь к нему через рацию призывников [ /v ], либо отправив СМС [ /w ID ].')
+		end)
+	end, 'Поведать о том, как уволиться с призывников.' },
+
+	['hact'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о АКТИОН. [ /hact ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для того, чтобы оставить текст 3D-ситуации воспользуйтесь [ /action ].')
+			sampSendChat('/an '..id..' Если Вы делаете обявление, следует соблюдать следующие правила:')
+			sampSendChat('/an '..id..' Оно должно иметь физический носитель, не нарушать MG и иметь контакты с персонажем.')
+			sampSendChat('/an '..id..' Пример: [Объявление на валяющейся газете] Продам тюнингованный автомобиль Bullet, контакты: 415-051. ')
+			sampSendChat('/an '..id..' В остальных случаях это предназначено для описания ситуации от третьего лица.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о АКТИОН.' },
+
+	['hunits'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о валюте Unit. [ /hunits ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Юниты — условная валюта на сервере. Накапливается выполняя различные действия в организации.')
+			sampSendChat('/an '..id..' Каждое убийство или нанесенный урон на захвате начисляет на Ваш аккаунт валюту - «Юниты».')
+			sampSendChat('/an '..id..' Также, они выдаются за каждый ящик с боеприпасами, который Вы принесли на склад фракции.')
+			sampSendChat('/an '..id..' Количество начисляемых Юнитов настраивается лидером организации. Их можно обменять на деньги.')
+			sampSendChat('/an '..id..' 1 Юнит = $1. Сделать это можно в Банке, либо, с помощью ноутбука - [ /notebook ].')
+			sampSendChat('/an '..id..' Остальную интересующую информацию насчёт юнитов вы можете узнать у лидера или заместителя фракции.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о валюте Unit.' },
+
+	['hsdel'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о том, где проводятся сделки. [ /hsdel ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Сделки на имущество проводятся в Центре Обмена - [ /gps » Услуги » Центр Обмена ].')
+			sampSendChat('/an '..id..' Продать какие-либо предметы Вы можете через Инвентарь, Лавку или на Рынке.')
+			sampSendChat('/an '..id..' [ /gps » Услуги » Рынок Los Santos / Черный Рынок ].')
+			sampSendChat('/an '..id..'Администрация не принимает участия и не контролирует этот процесс, ибо он автоматизирован.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о том, где проводятся сделки.' },
+
+	['nopromo'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Сказать о том, что промокодов нету. [ /nopromo ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' К сожалению, на данный момент промокоды отсутствуют.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Сказать о том, что промокодов нету.' },
+
+	['hfarm'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о работе фермера. [ /hfarm ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы начать работу фермера, нужно приехать на ферму [ /job - Ферма ].')
+			sampSendChat('/an '..id..' После того, как вы приехали, найдите чекпоинт и зайдите в здание.')
+			sampSendChat('/an '..id..' В здании подойдите к чекпоинту [ Ферма ] и нажмите на кнопку ALT.')
+			sampSendChat('/an '..id..' Для того, чтобы получить всю информацию по работе, вы можете нажать...')
+			sampSendChat('/an '..id..' ...в открывшемся меню на пункт [ Как заработать? ].')
+			sampSendChat('/an '..id..' На ферме есть 4 вида работ, о которых вы можете узнать в том же пункте.')
+			sampSendChat('/an '..id..' Остальную информацию вы можете узнать нажав на пункт [ Начать работу ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о работе фермера' },
+
+	['hmed'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о болезнях. [ /hmed ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Для того, чтобы излечиться от болезни, нужно понять, какая у вас болезнь.')
+			sampSendChat('/an '..id..' Чтобы это сделать, вам нужно приехать в больницу.')
+			sampSendChat('/an '..id..' [/gps - Организации - Фракции - Мин.здрав]')
+			sampSendChat('/an '..id..' В холле больницы находите чекпоинт [Регистратура], подходите и активируете его на ALT.')
+			sampSendChat('/an '..id..' В открывшемся окне выбираете пункт [Получить медицискую карту].')
+			sampSendChat('/an '..id..' После того, как её вам выдали, вы можете прописать команду [/med ID], чтобы понять...')
+			sampSendChat('/an '..id..' ...больны ли вы. Если вы всё-таки больны, найдите врача и попросите его поставить вам...')
+			sampSendChat('/an '..id..' ...диагноз. После того, как вам поставят диагноз, езжайте в ближайшую аптеку.')
+			sampSendChat('/an '..id..' [/gps - Услуги - Аптека]. Заходите в аптеку, смотрите диагноз в мед.карте и...')
+			sampSendChat('/an '..id..' ...лекарство, которое нужно для излечения, находите его в списке и покупаете.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о болезнях.' },
+
+	['hgks'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о ГКС. [ /hgks ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы устроиться мусорщиком или дорожным очистителем, вам нужно приехать...')
+			sampSendChat('/an '..id..' ...в Городскую клининговую службу [/gps - Работы - Городская клининговая служба].')
+			sampSendChat('/an '..id..' После того, как вы туда приехали, зайдите в небольшой контейнер и подойдите к чекпоинту...')
+			sampSendChat('/an '..id..' ...нажав на ALT выберите пункт [Как заработать?], в нём полностью расписана информация...')
+            sampSendChat('/an '..id..' ...по работе.')
+			sampSendChat('/an '..id..' Учтите, чтобы устроиться в эту службу, вам обязательно нужно иметь водительские права.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о ГКС' },
+
+	['hsperma'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о Спермобанке. [ /hsperma ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' В спермобанке работать очень легко. Первым делом вам нужно приехать туда.')
+			sampSendChat('/an '..id..' Слева на доске написано, кикам надо быть чтобы можно было пройти дальше.')
+			sampSendChat('/an '..id..' Подходите к NPC и нажимаете на "Начать процедуру", при желании можно купить журнал.')
+			sampSendChat('/an '..id..' Идём в любую кабинку, после [ /sex ] >> Онанизм.')
+            sampSendChat('/an '..id..' Вы начинаете свой процесс, вам нужно заполнить "шкалу удовлетворенности"...')
+			sampSendChat('/an '..id..' ...нажимая на клавиши, которые будут показаны на экране.')
+			sampSendChat('/an '..id..' После окончания процесса вы должны забрать зарплату на ресепшене.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о Спермобанке' },
+
+	['hufo'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать об НЛО. [ /hufo ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' НЛО появляется с 21:00 до 11:00 МСК каждый час.')
+			sampSendChat('/an '..id..' После его нахождения, вы должны по нему стрелять, для того, чтобы сбить его...')
+			sampSendChat('/an '..id..' ...и получить ресурсы.')
+			sampSendChat('/an '..id..' НЛО может находиться в любой части штата, его появление - чистый рандом. Также...')
+			sampSendChat('/an '..id..' ...НЛО имеет свойство перемещаться по штату.')
+			sampSendChat('/an '..id..' С НЛО могут выпасть аксессуары, топливо для автомобилей «Гелий», а также... ')
+			sampSendChat('/an '..id..' «Паладий». Он нужен для крафта взрывных патронов.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать об НЛО' },
+
+	['lomgun'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о поломке оружия. [ /lomgun ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Теперь каждое оружие по мере стрельбы может портиться, когда уровень...')
+			sampSendChat('/an '..id..' ...изношенности дойдет до 100%, оружие сломается и им нельзя будет пользоваться.')
+			sampSendChat('/an '..id..' Починить поломанное оружие, к сожалению, нельзя. Можно лишь купить новое.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о поломке оружия.' },
+
+	['hov'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о выращивании овощей. [ /hov ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На ферме вы можете выращивать овощи, для этого есть несколько теплиц.')
+			sampSendChat('/an '..id..' Что бы приступить к выращиванию, нужно закупить в главном здании семена...')
+			sampSendChat('/an '..id..' ...и по желанию удобрения. Удобрения ускоряют скорость роста на 10 минут.')
+			sampSendChat('/an '..id..' После покупки всего необходимого, нужно зайти в теплицу и начать сажать семена.')
+			sampSendChat('/an '..id..' После вспахивания грядки граблями, она будет готова для высаживания овощей.')
+            sampSendChat('/an '..id..' Вы можете посадить в неё семена, которые купили. При необходимости можно их удобрять')
+            sampSendChat('/an '..id..' Ваши растения необходимо поливать. Если вы не будете ими заниматься - они засохнут.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о выращивании овощей.' },
+
+	['hpt'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о взрывных патронах. [ /hpt ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На сервере есть взрывные патроны для 4-х видов оружия.')
+			sampSendChat('/an '..id..' Для создания новых типов патрон нужно добывать редкий материал «Паладий».')
+			sampSendChat('/an '..id..' Достать его можно, сбив НЛО, которое пролетает над штатом или же добывать его на...')
+			sampSendChat('/an '..id..' ...экспедиции в космос [ /job - NASA ].')
+			sampSendChat('/an '..id..' Крафитить данные патроны можно в бандах на специальном столе для крафта.')
+            sampSendChat('/an '..id..' Курс крафта следующий: 1 Взрывной патрон = 10 Паладия.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о взрывных патронах.' },
+
+	['hgel'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о гелие. [ /hgel ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На сервере присутствует такой вид топлива для транспорта, как «Гелий».')
+			sampSendChat('/an '..id..' Данное топливо можно заправить в транспорт. Оно расходуется...')
+			sampSendChat('/an '..id..' ...в 4 раза меньше, чем обычное топливо.')
+			sampSendChat('/an '..id..' Добыть данный вид топлива можно сбив НЛО, которое появляется каждый час...')
+			sampSendChat('/an '..id..' ...с 21:00 до 11:00 МСК, либо же найти на экспедиции в космос [ /job - NASA ].')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о гелие.' },
+
+	['frukt'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о сборе фруктов. [ /frukt ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На ферме есть такой вид работы, как сбор фруктов.')
+			sampSendChat('/an '..id..' В саду растут несколько видов фруктов: бананы, яблоки, апельсины.')
+			sampSendChat('/an '..id..' Для сбора нужно взять ящик и отправиться к деревьям.')
+			sampSendChat('/an '..id..' Подойдя к любому дереву, вы увидете сколько на нём есть плодов.')
+			sampSendChat('/an '..id..' Чтобы заполнить корзинку фруктами - нажимайте на ПКМ.')
+			sampSendChat('/an '..id..' После заполнения корзинки - на карте появится метка, куда нужно...')
+			sampSendChat('/an '..id..' ...будет отнести мешок для получения вознаграждения за работу.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о сборе фруктов' },
+
+	['doika'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о дойке коров. [ /doika ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На ферме есть такой вид работы, как дойка коров.')
+			sampSendChat('/an '..id..' Для дойки коров пройдите в два ангара что находятся на ферме, возьмите ведро...')
+			sampSendChat('/an '..id..' ...после чего подойдите к одной из свободных коров и сядьте на стул...')
+            sampSendChat('/an '..id..' ...с помощью кнопки ALT для начала процесса. Чтобы доить корову - нажимайте ПКМ.')
+			sampSendChat('/an '..id..' После того, как в ведре наберётся 20/20 очков, вы можете отнести молоко...')
+			sampSendChat('/an '..id..' ...на стол у входа в агар и получить за это вознаграждение.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о дойке коров.' },
+
+	['sbor'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о сборе урожая. [ /sbor ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На ферме есть такой вид работы, как сбор урожая')
+			sampSendChat('/an '..id..' Для сбора урожая вам нужно подойти к аренде рабочего транспорта на ферме...')
+			sampSendChat('/an '..id..' ...и арендовать комбайн.')
+            sampSendChat('/an '..id..' Учтите, что если вы будете ездить на комбайне по городу, то будете лишены прав.')
+			sampSendChat('/an '..id..' Для начала сбора урожая - отправляйтесь на чекпоинт, который появится на миникарте...')
+			sampSendChat('/an '..id..' ...после аренды комбайна. Для сбора нажмите на кнопку H, когда будете на чекпоинте.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о сборе урожая.' },
+
+	['vspah'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о вспахивании поля. [ /vspah ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' На ферме есть такой вид работы, как вспахивание поля.')
+			sampSendChat('/an '..id..' Для вспахивания поля, вам нужно подойти к аренде рабочего транспорта на ферме...')
+			sampSendChat('/an '..id..' ...и арендовать трактор. После, прицепите на него один из прицепов справа от аренды.')
+            sampSendChat('/an '..id..' Если поле будет забито урожаем, то вы не сможете его вспахивать, пока кто-то...')
+			sampSendChat('/an '..id..' ...не соберёт этот урожай. Вы его можете также собрать, арендовав комбайн.')
+			sampSendChat('/an '..id..' После аренды трактора, на миникарте появится метка. Для вспахивания, подъедьте...')
+			sampSendChat('/an '..id..' ...на метку и нажмите кнопку H.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о вспахивании поля.' },
+
+	['hmusor'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о работе мусорщика. [ /hmusor ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы устроиться мусорщиком, вам нужно приехать в Городскую клининговую службу.')
+			sampSendChat('/an '..id..' [ /job - Городская клининговая служба ].')
+			sampSendChat('/an '..id..' После того, как вы туда приехали, зайдите в небольшой контейнер и подойдите к чекпоинту...')
+			sampSendChat('/an '..id..' ...нажав на ALT выберите пункт [ Начать работу ]. После, вам необходимо арендовать...')
+            sampSendChat('/an '..id..' ...т/с «Trashmaster», после аренды на миникарте появится метка, где есть заполненный...')
+            sampSendChat('/an '..id..' ...мусорный контейнер, как только вы туда приедете - следуйте подсказкам на экране.')
+			sampSendChat('/an '..id..' Когда автомобиль будет полностью забит мусором - нужно будет разгрузить его на базе.')
+			sampSendChat('/an '..id..' Учтите, чтобы устроиться в эту службу, вам обязательно нужно иметь водительские права.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о работе мусорщика' },
+
+	['hcas'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о казино. [ /hcas ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' В казино вы сможете сыграть во множество разных весёлых и интерестных игр.')
+			sampSendChat('/an '..id..' Рулетка - самая обычная рулетка где вы ставите свою ставку что выпадет какое то число...')
+			sampSendChat('/an '..id..' ....диапазон или цвет. Поставить на 1 ставку можно до 500 тыс. фишек.')
+			sampSendChat('/an '..id..' В кости можно играть в любом месте и на деньги, только их нужно купить в самом казино.')
+            sampSendChat('/an '..id..' Просто нажмите на кость в инвентаре и сыграйте с ближайшим вам игроком.')
+            sampSendChat('/an '..id..' Карты - дурак переводной, покидной, ну и покер.')
+			sampSendChat('/an '..id..' ПО кругу казино есть столы, в которые вы можете зайти и поиграть в казино.')
+			sampSendChat('/an '..id..' Интерфейс понятен и разобраться в чём то не составит труда.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о казино.' },
+
+	['wko'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Где накаутирование? [ /wko ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Команда [ /ko ], была убрана с сервера. Её заменили на биту.')
+			sampSendChat('/an '..id..' Биту можно купить в супермаркете. Чтобы вырубить человека вам нужно побить человека несколько раз.')
+			sampSendChat('/an '..id..' Если вы находитесь в мафии, за городом если вырубить человека, из него может выпасть...')
+			sampSendChat('/an '..id..' ...любой предмет из инвентаря. Но будьте аккуратны, если вы будете использовать биту...')
+            sampSendChat('/an '..id..' ...без РП и не по назначению, вы будете наказаны!')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Где накаутирование?' },
+
+	['wpears'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Где Pears Project? [ /wpears ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Сервер был переименован в Sampik Online.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Где Pears Project?' },
+
+	['hach'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о достижениях [ /hach ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Достижения - система которая даёт вам небольшой приз за выполненную работу.')
+			sampSendChat('/an '..id..' На сервере всего 121 достижения. Какие они мы вам не скажем ;)')
+			sampSendChat('/an '..id..' Просто играйте на сервере и они сами будут вам даваться.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о казино.' },
+
+	['hclean'] = { function(id)
+		id = tonumber(id)
+		if not id then return sampAddChatMessage('[ fEXP ]: Поведать о работе дорожного очистителя. [ /hclean ID ]', 0xc1c1c1) end
+		lua_thread.create(function()
+			wait(40)
+			sampSendChat('/an '..id..' Чтобы устроиться дорожным очистителем, вам нужно приехать в Городскую клининговую службу.')
+			sampSendChat('/an '..id..' [ /job - Городская клининговая служба].')
+			sampSendChat('/an '..id..' После того, как вы туда приехали, зайдите в небольшой контейнер и подойдите к чекпоинту...')
+			sampSendChat('/an '..id..' ...нажав на ALT выберите пункт [ Начать работу ]. После, вам необходимо арендовать...')
+            sampSendChat('/an '..id..' ...т/с «Sweeper», после аренды на миникарте появится метка, где вам нужно будет...')
+            sampSendChat('/an '..id..' ...очистить мусор, как только вы туда приедете, нажмите на H для начала очистки.')
+			sampSendChat('/an '..id..' На этой работе не нужно будет возвращаться на базу, в отличие от работы мусорщика.')
+			sampSendChat('/an '..id..' Учтите, чтобы устроиться в эту службу, вам обязательно нужно иметь водительские права.')
+			sampSendChat('/com '..id)
+		end)
+	end, 'Поведать о работе дорожного очистителя.' },
+
+}
