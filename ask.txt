@@ -590,7 +590,7 @@
 }
 
 	},
-	"CHTOOOOO": {
-		"example": "ПРОВЕРКА ЕБАННАЯ ИУУ. [ /CHTOOOOO ID ]",
+	"wthbroo": {
+		"example": "ПРОВЕРКА ЕБАННАЯ ИУУ. [ /wthbroo ID ]",
 		"text": "МАМА ПАПА МАМА ПАПА МАМА ПАПА"
 	},
